@@ -36,16 +36,19 @@ public class DinerMenu {
         }
     }
 
-    public MenuItem[] getMenuItems() {
-        return menuItems;
+    public DinerMenuIterator createIterator() {
+        return new DinerMenuIterator(menuItems);
     }
+
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        for(MenuItem item: getMenuItems()) {
-            stringBuilder.append(item.toString());
+        for (MenuItem item: menuItems) {
+            if (item != null) {
+                stringBuilder.append(item.toString());
+            }
         }
-        return  stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
       // other menu methods here
